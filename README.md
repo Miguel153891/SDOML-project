@@ -5,6 +5,8 @@
 <details>
  <summary>Team members</summary>
  - Miguel Zubitur
+
+ - MZZZ
  
  - Magdalena Hristova
  
