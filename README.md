@@ -4,7 +4,7 @@
 
 <details>
  <summary>Team members</summary>
- - 
+ - Miguel Zubitur
  
  - Magdalena Hristova
  
