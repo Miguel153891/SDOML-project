@@ -1,24 +1,31 @@
 # SDOML-project
 
-## Team #?
+## Team #5
 
 <details>
  <summary>Team members</summary>
  - 
- - 
+ 
+ - Magdalena Hristova
+ 
  - Diego Suarez
 
 </details>
 
-## Proyect Information
+## Project Information
 <details>
- <summary>What does this proyect do?</summary>
+ <summary>What does this project do?</summary>
 
 </details>
 
 <details>
  <summary>Data source:</summary>
-
+ https://www.kaggle.com/datasets/deeplumiere/automobile-market-analytics-dataset
+ 
+ https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction 
+ 
+ https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries
+ 
 </details>
 
 <details>
