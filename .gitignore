@@ -4,3 +4,6 @@
 *.venv
 *.lock
 *.ipynb_checkpoints
+
+## macOS
+.DS_Store
