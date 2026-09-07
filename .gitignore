@@ -1,0 +1,6 @@
+# ignored files
+
+## runtime files
+*.venv
+*.lock
+*.ipynb_checkpoints
