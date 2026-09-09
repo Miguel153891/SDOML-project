@@ -1,4 +1,8 @@
-# SDOML-project
+<h1 align="center">SDOML-project</h1>
+
+<p align="center">
+  Used Car Market Analysis and Price Prediction
+</p>
 
 ## Team #5
 
