@@ -1,19 +1,17 @@
 <h1 align="center">SDOML-project</h1>
 
 <p align="center">
-  Used Car Market Analysis and Price Prediction
+  Automobile Market Analytics Dataset
 </p>
 
-## Team #5
+<h2 align="center">Team #5</h2>
 
 <details>
- <summary>Team members</summary>
- 
- - Miguel Zubitur
- 
- - Magdalena Hristova
- 
- - Diego Suarez
+  <summary>Team members</summary>
+
+  - Miguel Zubitur
+  - Magdalena Hristova
+  - Diego Suarez
 
 </details>
 
