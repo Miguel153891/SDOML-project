@@ -1,6 +1,7 @@
 # ignored files
 
 ## runtime files
+__pycache__/
 *.venv
 *.lock
 *.ipynb_checkpoints
