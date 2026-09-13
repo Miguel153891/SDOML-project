@@ -38,7 +38,7 @@ https://www.kaggle.com/datasets/deeplumiere/automobile-market-analytics-dataset
 
  Must have Python and Jupyter Notebook available on your system.
 
- The required installation is going to the notebooks folder and running the command `uv sync`.
+ Run the command `uv sync` to get the environment. To get the docs, run pdoc with `uv run pdoc -o docs my_project`
 
 </details>
 
