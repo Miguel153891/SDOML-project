@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 from my_project.dataset import AutomobileDataset
 
 
-def create_model(input_size):
+def create_model(input_size: int) -> nn.Module:
     """Create the neural network used for price prediction.
 
     Parameters
@@ -27,7 +27,7 @@ def create_model(input_size):
     )
 
 
-def train_model(model, train_loader, epochs=100, learning_rate=0.001):
+def train_model(model: nn.Module, train_loader: DataLoader, epochs: int=100, learning_rate: float=0.001) -> nn.Module:
     """Train the automobile price prediction model.
 
     Parameters
@@ -67,13 +67,17 @@ def train_model(model, train_loader, epochs=100, learning_rate=0.001):
 
 
 def main():
+    PROCESSED_TRAIN_FILE = "data/processed/automobile_dataset"
+    PROCESSED_TEST_FILE = "data/processed/automobile_test"
+    MODEL_PATH = "models/automobile_model.pth"
+    
     """Train the automobile price prediction model and save it to disk."""
     train_dataset = AutomobileDataset(
-        "data/processed/automobile_dataset.parquet"
+        f"{PROCESSED_TRAIN_FILE}.parquet"
     )
 
     test_dataset = AutomobileDataset(
-        "data/processed/automobile_test.parquet"
+        f"{PROCESSED_TEST_FILE}.parquet"
     )
 
     train_loader = DataLoader(
@@ -98,10 +102,10 @@ def main():
 
     torch.save(
         model.state_dict(),
-        "models/automobile_model.pth"
+        MODEL_PATH
     )
 
-    print("Model saved to models/automobile_model.pth")
+    print(f"Model saved to {MODEL_PATH}")
 
 
 if __name__ == "__main__":

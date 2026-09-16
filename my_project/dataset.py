@@ -30,7 +30,7 @@ class AutomobileDataset(Dataset):
     # Number of samples in the dataset
     """
 
-    def __init__(self, path):
+    def __init__(self, path: str):
         """Initialize the automobile dataset.
 
         Parameters
@@ -50,7 +50,7 @@ class AutomobileDataset(Dataset):
             dtype=torch.float32
         )
 
-    def __len__(self):
+    def __len__(self) -> int:
         """Return the number of samples in the dataset.
 
         Returns
@@ -60,7 +60,7 @@ class AutomobileDataset(Dataset):
         """
         return len(self.X)
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: int) -> tuple[torch.Tensor, torch.Tensor]:
         """Return a single sample from the dataset.
 
         Parameters
