@@ -100,7 +100,7 @@
 </span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="sd">    # Number of samples in the dataset</span>
 </span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a><span class="sd">    """</span>
 </span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>
-</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 </span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a><span class="w">        </span><span class="sd">"""Initialize the automobile dataset.</span>
 </span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>
 </span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a><span class="sd">        Parameters</span>
@@ -120,7 +120,7 @@
 </span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>            <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span>
 </span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a>        <span class="p">)</span>
 </span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>
-</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a><span class="w">        </span><span class="sd">"""Return the number of samples in the dataset.</span>
 </span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a>
 </span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="sd">        Returns</span>
@@ -130,7 +130,7 @@
 </span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a><span class="sd">        """</span>
 </span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a>        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
 </span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a>
-</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
 </span><span id="L-64"><a href="#L-64"><span class="linenos">64</span></a><span class="w">        </span><span class="sd">"""Return a single sample from the dataset.</span>
 </span><span id="L-65"><a href="#L-65"><span class="linenos">65</span></a>
 </span><span id="L-66"><a href="#L-66"><span class="linenos">66</span></a><span class="sd">        Parameters</span>
@@ -184,7 +184,7 @@
 </span><span id="AutomobileDataset-31"><a href="#AutomobileDataset-31"><span class="linenos">31</span></a><span class="sd">    # Number of samples in the dataset</span>
 </span><span id="AutomobileDataset-32"><a href="#AutomobileDataset-32"><span class="linenos">32</span></a><span class="sd">    """</span>
 </span><span id="AutomobileDataset-33"><a href="#AutomobileDataset-33"><span class="linenos">33</span></a>
-</span><span id="AutomobileDataset-34"><a href="#AutomobileDataset-34"><span class="linenos">34</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+</span><span id="AutomobileDataset-34"><a href="#AutomobileDataset-34"><span class="linenos">34</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 </span><span id="AutomobileDataset-35"><a href="#AutomobileDataset-35"><span class="linenos">35</span></a><span class="w">        </span><span class="sd">"""Initialize the automobile dataset.</span>
 </span><span id="AutomobileDataset-36"><a href="#AutomobileDataset-36"><span class="linenos">36</span></a>
 </span><span id="AutomobileDataset-37"><a href="#AutomobileDataset-37"><span class="linenos">37</span></a><span class="sd">        Parameters</span>
@@ -204,7 +204,7 @@
 </span><span id="AutomobileDataset-51"><a href="#AutomobileDataset-51"><span class="linenos">51</span></a>            <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span>
 </span><span id="AutomobileDataset-52"><a href="#AutomobileDataset-52"><span class="linenos">52</span></a>        <span class="p">)</span>
 </span><span id="AutomobileDataset-53"><a href="#AutomobileDataset-53"><span class="linenos">53</span></a>
-</span><span id="AutomobileDataset-54"><a href="#AutomobileDataset-54"><span class="linenos">54</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="AutomobileDataset-54"><a href="#AutomobileDataset-54"><span class="linenos">54</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="AutomobileDataset-55"><a href="#AutomobileDataset-55"><span class="linenos">55</span></a><span class="w">        </span><span class="sd">"""Return the number of samples in the dataset.</span>
 </span><span id="AutomobileDataset-56"><a href="#AutomobileDataset-56"><span class="linenos">56</span></a>
 </span><span id="AutomobileDataset-57"><a href="#AutomobileDataset-57"><span class="linenos">57</span></a><span class="sd">        Returns</span>
@@ -214,7 +214,7 @@
 </span><span id="AutomobileDataset-61"><a href="#AutomobileDataset-61"><span class="linenos">61</span></a><span class="sd">        """</span>
 </span><span id="AutomobileDataset-62"><a href="#AutomobileDataset-62"><span class="linenos">62</span></a>        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
 </span><span id="AutomobileDataset-63"><a href="#AutomobileDataset-63"><span class="linenos">63</span></a>
-</span><span id="AutomobileDataset-64"><a href="#AutomobileDataset-64"><span class="linenos">64</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+</span><span id="AutomobileDataset-64"><a href="#AutomobileDataset-64"><span class="linenos">64</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
 </span><span id="AutomobileDataset-65"><a href="#AutomobileDataset-65"><span class="linenos">65</span></a><span class="w">        </span><span class="sd">"""Return a single sample from the dataset.</span>
 </span><span id="AutomobileDataset-66"><a href="#AutomobileDataset-66"><span class="linenos">66</span></a>
 </span><span id="AutomobileDataset-67"><a href="#AutomobileDataset-67"><span class="linenos">67</span></a><span class="sd">        Parameters</span>
@@ -263,13 +263,13 @@ y : torch.Tensor
                                         <input id="AutomobileDataset.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
-        <span class="name">AutomobileDataset</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">path</span></span>)</span>
+        <span class="name">AutomobileDataset</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">path</span><span class="p">:</span> <span class="nb">str</span></span>)</span>
 
                 <label class="view-source-button" for="AutomobileDataset.__init__-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#AutomobileDataset.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="AutomobileDataset.__init__-34"><a href="#AutomobileDataset.__init__-34"><span class="linenos">34</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="AutomobileDataset.__init__-34"><a href="#AutomobileDataset.__init__-34"><span class="linenos">34</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 </span><span id="AutomobileDataset.__init__-35"><a href="#AutomobileDataset.__init__-35"><span class="linenos">35</span></a><span class="w">        </span><span class="sd">"""Initialize the automobile dataset.</span>
 </span><span id="AutomobileDataset.__init__-36"><a href="#AutomobileDataset.__init__-36"><span class="linenos">36</span></a>
 </span><span id="AutomobileDataset.__init__-37"><a href="#AutomobileDataset.__init__-37"><span class="linenos">37</span></a><span class="sd">        Parameters</span>
