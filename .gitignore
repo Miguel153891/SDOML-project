@@ -1,10 +1,23 @@
-# ignored files
-
-## runtime files
+# Python cache
 __pycache__/
-*.venv
-*.lock
-*.ipynb_checkpoints
+*.py[cod]
 
-## macOS
+# Virtual environments
+.venv/
+venv/
+*.lock
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Model checkpoints / generated models
+models/
+
+# Raw and processed datasets
+data/raw/
+data/interim/
+data/processed/
