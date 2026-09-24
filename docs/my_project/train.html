@@ -236,15 +236,18 @@
 
             <div class="docstring"><p>Create the neural network used for price prediction.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>input_size : int
-    Number of input features.</p>
+<ul>
+<li><strong>input_size</strong> (int):
+Number of input features.</li>
+</ul>
 
-<h2 id="returns">Returns</h2>
+<h6 id="returns">Returns</h6>
 
-<p>torch.nn.Module
-    Neural network for predicting automobile selling prices.</p>
+<ul>
+<li><strong>torch.nn.Module</strong>: Neural network for predicting automobile selling prices.</li>
+</ul>
 </div>
 
 
@@ -315,24 +318,24 @@
 
             <div class="docstring"><p>Train the automobile price prediction model.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>model : torch.nn.Module
-    Neural network to train.</p>
+<ul>
+<li><strong>model</strong> (torch.nn.Module):
+Neural network to train.</li>
+<li><strong>train_loader</strong> (torch.utils.data.DataLoader):
+DataLoader containing the training data.</li>
+<li><strong>epochs</strong> (int, default=100):
+Number of training epochs.</li>
+<li><strong>learning_rate</strong> (float, default=0.001):
+Learning rate used by the Adam optimizer.</li>
+</ul>
 
-<p>train_loader : torch.utils.data.DataLoader
-    DataLoader containing the training data.</p>
+<h6 id="returns">Returns</h6>
 
-<p>epochs : int, default=100
-    Number of training epochs.</p>
-
-<p>learning_rate : float, default=0.001
-    Learning rate used by the Adam optimizer.</p>
-
-<h2 id="returns">Returns</h2>
-
-<p>torch.nn.Module
-    The trained model.</p>
+<ul>
+<li><strong>torch.nn.Module</strong>: The trained model.</li>
+</ul>
 </div>
 
 

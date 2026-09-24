@@ -236,19 +236,23 @@
 <p>Loads a processed Parquet dataset, separates the input features from
 the target variable, and converts both to PyTorch tensors.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>path : str
-    Path to the Parquet file containing the processed automobile data.</p>
+<ul>
+<li><strong>path</strong> (str):
+Path to the Parquet file containing the processed automobile data.</li>
+</ul>
 
-<h2 id="attributes">Attributes</h2>
+<h6 id="attributes">Attributes</h6>
 
-<p>X : torch.Tensor
-    Input features as a two-dimensional float32 tensor.
-y : torch.Tensor
-    Target selling prices as a one-dimensional float32 tensor.</p>
+<ul>
+<li><strong>X</strong> (torch.Tensor):
+Input features as a two-dimensional float32 tensor.</li>
+<li><strong>y</strong> (torch.Tensor):
+Target selling prices as a one-dimensional float32 tensor.</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h6 id="examples">Examples</h6>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">AutomobileDataset</span><span class="p">(</span><span class="s2">"data/processed/automobile_dataset.parquet"</span><span class="p">)</span>
@@ -293,10 +297,12 @@ y : torch.Tensor
 
             <div class="docstring"><p>Initialize the automobile dataset.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>path : str
-    Path to the Parquet dataset.</p>
+<ul>
+<li><strong>path</strong> (str):
+Path to the Parquet dataset.</li>
+</ul>
 </div>
 
 

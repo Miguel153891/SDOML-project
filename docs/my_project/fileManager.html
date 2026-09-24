@@ -439,17 +439,21 @@
 
             <div class="docstring"><p>A simple file manager.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>format_ : str, optional
-    Initial format of the files its managing</p>
+<ul>
+<li><strong>format_</strong> (str, optional):
+Initial format of the files its managing</li>
+</ul>
 
-<h2 id="attributes">Attributes</h2>
+<h6 id="attributes">Attributes</h6>
 
-<p>format : str | None
-    Format of the files its managing</p>
+<ul>
+<li><strong>format</strong> (str | None):
+Format of the files its managing</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h6 id="examples">Examples</h6>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">fm</span> <span class="o">=</span> <span class="n">FileManager</span><span class="p">()</span>
@@ -543,12 +547,13 @@
 
             <div class="docstring"><p>Static method. Obtains the supported file formats.</p>
 
-<h2 id="returns">Returns</h2>
+<h6 id="returns">Returns</h6>
 
-<p>list[str]
-    List of strings, each a supported format</p>
+<ul>
+<li><strong>list[str]</strong>: List of strings, each a supported format</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h6 id="examples">Examples</h6>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">formats</span> <span class="o">=</span> <span class="n"><a href="#FileManager.avalible_formats">FileManager.avalible_formats</a></span><span class="p">()</span>
@@ -596,17 +601,20 @@
 
             <div class="docstring"><p>Static method. Checks if a file format is supported.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>format_ : str
-    File format to check</p>
+<ul>
+<li><strong>format_</strong> (str):
+File format to check</li>
+</ul>
 
-<h2 id="returns">Returns</h2>
+<h6 id="returns">Returns</h6>
 
-<p>bool
-    True if it is supported</p>
+<ul>
+<li><strong>bool</strong>: True if it is supported</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h6 id="examples">Examples</h6>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">csv_supported</span> <span class="o">=</span> <span class="n"><a href="#FileManager.is_format">FileManager.is_format</a></span><span class="p">(</span><span class="s2">"csv"</span><span class="p">)</span>
@@ -654,22 +662,25 @@
 
             <div class="docstring"><p>Sets the file format of the files to manage.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>format_ : str
-    File format to use</p>
+<ul>
+<li><strong>format_</strong> (str):
+File format to use</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h6 id="examples">Examples</h6>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">fm</span><span class="o">.</span><span class="n">set_format</span><span class="p">(</span><span class="s2">"csv"</span><span class="p">)</span>
 </code></pre>
 </div>
 
-<h2 id="raises">Raises</h2>
+<h6 id="raises">Raises</h6>
 
-<p>Exception
-    If the format is not supported</p>
+<ul>
+<li><strong>Exception</strong>: If the format is not supported</li>
+</ul>
 </div>
 
 
@@ -712,17 +723,20 @@
 
             <div class="docstring"><p>Reads from the selected file.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>input_filename : str
-    Filename without extension</p>
+<ul>
+<li><strong>input_filename</strong> (str):
+Filename without extension</li>
+</ul>
 
-<h2 id="returns">Returns</h2>
+<h6 id="returns">Returns</h6>
 
-<p>pd.DataFrame
-    Dataframe with the content read from the selected file</p>
+<ul>
+<li><strong>pd.DataFrame</strong>: Dataframe with the content read from the selected file</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h6 id="examples">Examples</h6>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">fm</span><span class="o">.</span><span class="n">set_format</span><span class="p">(</span><span class="s2">"csv"</span><span class="p">)</span>
@@ -773,19 +787,22 @@
 
             <div class="docstring"><p>Writes to the selected file.</p>
 
-<h2 id="parameters">Parameters</h2>
+<h6 id="parameters">Parameters</h6>
 
-<p>df : pd.DataFrame
-    Dataframe containg the content to write
-input_filename : str
-    Filename without extension</p>
+<ul>
+<li><strong>df</strong> (pd.DataFrame):
+Dataframe containg the content to write</li>
+<li><strong>input_filename</strong> (str):
+Filename without extension</li>
+</ul>
 
-<h2 id="returns">Returns</h2>
+<h6 id="returns">Returns</h6>
 
-<p>str | None
-    Passes the return of the apropiate write call</p>
+<ul>
+<li><strong>str | None</strong>: Passes the return of the apropiate write call</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h6 id="examples">Examples</h6>
 
 <div class="pdoc-code codehilite">
 <pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">fm</span><span class="o">.</span><span class="n">set_format</span><span class="p">(</span><span class="s2">"csv"</span><span class="p">)</span>

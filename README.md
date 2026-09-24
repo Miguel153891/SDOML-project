@@ -367,7 +367,7 @@ The API documentation is generated using [pdoc](https://pdoc.dev/).
 
 Run the command
 ```bash
-uv run pdoc -o docs my_project
+uv run pdoc -o docs my_project --docformat numpy
 ```
 
 The generated documentation is stored in `docs/` and published automatically through GitHub Pages.
