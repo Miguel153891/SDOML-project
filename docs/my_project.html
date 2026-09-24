@@ -21,6 +21,24 @@
             <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
                    pattern=".+" required>
 
+            <h2>Contents</h2>
+            <ul>
+  <li><a href="#sdoml-project">SDOML Project</a>
+  <ul>
+    <li><a href="#team-5">Team #5</a></li>
+    <li><a href="#project-information">Project Information</a></li>
+    <li><a href="#dataset">Dataset</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#how-to-run-the-project">How to Run the Project</a></li>
+    <li><a href="#complete-workflow">Complete Workflow</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#main-components">Main Components</a></li>
+    <li><a href="#documentation-generation">Documentation Generation</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+  </ul></li>
+</ul>
+
 
             <h2>Submodules</h2>
             <ul>
@@ -43,12 +61,492 @@
                     <h1 class="modulename">
 my_project    </h1>
 
-                
+                        <div class="docstring"><h1 id="sdoml-project" align="center">SDOML Project</h1>
+
+<p align="center">
+  <strong>Automobile Market Analytics</strong>
+</p>
+
+<h2 id="team-5" align="center">Team #5</h2>
+
+<p><details>
+<summary><strong>Team members</strong></summary></p>
+
+<ul>
+<li>Miguel Zubitur</li>
+<li>Magdalena Hristova</li>
+<li>Diego Suarez</li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="project-information">Project Information</h2>
+
+<p><details>
+<summary><strong>What does this project do?</strong></summary></p>
+
+<p>This project was developed for the <strong>Software Development Oriented to Machine Learning (SDOML)</strong> course.</p>
+
+<p>The project analyzes the factors that influence the price of used cars, including vehicle characteristics such as age, mileage, condition, and technical features.</p>
+
+<p>A machine learning model based on a neural network is also developed to predict the selling price of an automobile from its characteristics.</p>
+
+<p>The project includes:</p>
+
+<ul>
+<li>Data downloading</li>
+<li>Data preprocessing</li>
+<li>Exploratory data analysis</li>
+<li>Machine learning model training</li>
+<li>Model performance analysis</li>
+</ul>
+
+<p></details></p>
+
+<p><details>
+<summary><strong>Project documentation</strong></summary></p>
+
+<p>The project documentation is published using <strong>GitHub Pages</strong>:</p>
+
+<p><strong><a href="https://miguel153891.github.io/SDOML-project/">Project Documentation</a></strong></p>
+
+<p>The documentation is generated using <code>pdoc</code> and is published from the <code>docs/</code> directory.</p>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="dataset">Dataset</h2>
+
+<p><details>
+<summary><strong>Data source</strong></summary></p>
+
+<p>The dataset used in this project was obtained from Kaggle:</p>
+
+<p><a href="https://www.kaggle.com/datasets/deeplumiere/automobile-market-analytics-dataset">Automobile Market Analytics Dataset</a></p>
+
+<p>The dataset is downloaded automatically using <code>kagglehub</code>.</p>
+
+<p>The dataset is <strong>not stored in the repository</strong>. It can be downloaded again by following the workflow described below.</p>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="installation">Installation</h2>
+
+<p><details>
+<summary><strong>Requirements</strong></summary></p>
+
+<p>The project requires:</p>
+
+<ul>
+<li>Python 3.10 or newer</li>
+<li><a href="https://docs.astral.sh/uv/">uv</a></li>
+<li>Jupyter Notebook</li>
+</ul>
+
+<p>The Python dependencies are managed through <code>pyproject.toml</code> and <code>uv.lock</code>.</p>
+
+<p></details></p>
+
+<p><details>
+<summary><strong>Install the project</strong></summary></p>
+
+<p>Clone the repository:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Miguel153891/SDOML-project.git
+<span class="nb">cd</span><span class="w"> </span>SDOML-project
+</code></pre>
+</div>
+
+<p>Install the project dependencies:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>uv<span class="w"> </span>sync
+</code></pre>
+</div>
+
+<p>This creates the required environment and installs the dependencies specified by the project.</p>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="how-to-run-the-project">How to Run the Project</h2>
+
+<p>The complete workflow should be executed in the following order.</p>
+
+<p><details>
+<summary><strong>1. Download the dataset</strong></summary></p>
+
+<p>Run:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>my_project.download_data
+</code></pre>
+</div>
+
+<p>This downloads the dataset from Kaggle and creates:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>data/
+└── raw/
+    └── automobile_dataset.csv
+</code></pre>
+</div>
+
+<p>The <code>data/raw/</code> directory is generated automatically if it does not exist.</p>
+
+<p></details></p>
+
+<p><details>
+<summary><strong>2. Process and explore the data</strong></summary></p>
+
+<p>Open:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>notebooks/data_exploration.ipynb
+</code></pre>
+</div>
+
+<p>and execute all cells.</p>
+
+<p>The notebook performs the data preprocessing and exploratory data analysis.</p>
+
+<p>The processed datasets are generated in:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>data/
+└── processed/
+    ├── automobile_dataset.parquet
+    └── automobile_test.parquet
+</code></pre>
+</div>
+
+<p>The exploratory analysis also generates figures in:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>reports/
+└── figures/
+    └── exploration/
+</code></pre>
+</div>
+
+<p></details></p>
+
+<p><details>
+<summary><strong>3. Train the model</strong></summary></p>
+
+<p>After the processed datasets have been generated, run:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span><a href="my_project/train.html">my_project.train</a>
+</code></pre>
+</div>
+
+<p>The training script creates and trains the neural network.</p>
+
+<p>The trained model is saved to:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>models/
+└── automobile_model.pth
+</code></pre>
+</div>
+
+<p>The <code>models/</code> directory is created automatically if it does not exist.</p>
+
+<p></details></p>
+
+<p><details>
+<summary><strong>4. Analyze model performance</strong></summary></p>
+
+<p>Open:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>notebooks/performance_analysis.ipynb
+</code></pre>
+</div>
+
+<p>and execute all cells.</p>
+
+<p>The notebook loads the trained model and analyzes its predictions and performance.</p>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="complete-workflow">Complete Workflow</h2>
+
+<p>For a clean setup, execute:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>uv<span class="w"> </span>sync
+</code></pre>
+</div>
+
+<p>Then download the dataset:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>my_project.download_data
+</code></pre>
+</div>
+
+<p>Then execute all cells in:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>notebooks/data_exploration.ipynb
+</code></pre>
+</div>
+
+<p>Then train the model:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span><a href="my_project/train.html">my_project.train</a>
+</code></pre>
+</div>
+
+<p>Finally, execute:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>notebooks/performance_analysis.ipynb
+</code></pre>
+</div>
+
+<p>The complete workflow is:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>Kaggle
+   │
+   ▼
+download_data.py
+   │
+   ▼
+data/raw/
+   │
+   ▼
+data_exploration.ipynb
+   │
+   ├──► reports/figures/exploration/
+   │
+   ▼
+data/processed/
+   │
+   ▼
+train.py
+   │
+   ▼
+models/automobile_model.pth
+   │
+   ▼
+performance_analysis.ipynb
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="project-structure">Project Structure</h2>
+
+<p><details>
+<summary><strong>Repository structure</strong></summary></p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>SDOML-project/
+│
+├── my_project/
+│   ├── __init__.py
+│   ├── dataset.py
+│   ├── download_data.py
+│   ├── fileManager.py
+│   └── train.py
+│
+├── notebooks/
+│   ├── data_exploration.ipynb
+│   └── performance_analysis.ipynb
+│
+├── reports/
+│   ├── export_notebooks/
+│   └── figures/
+│
+├── docs/
+│   └── Generated project documentation
+│
+├── LICENSE
+├── README.md
+├── Requirements.md
+├── pyproject.toml
+├── uv.lock
+├── practice1.pdf
+├── practice2.pdf
+└── practice3.pdf
+</code></pre>
+</div>
+
+<p>The following directories are generated locally and are not committed to Git:</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>data/
+├── raw/
+└── processed/
+
+models/
+</code></pre>
+</div>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="main-components">Main Components</h2>
+
+<p><details>
+<summary><strong>Python modules</strong></summary></p>
+
+<h3 id="my_projectdownload_datapy"><code>my_project/download_data.py</code></h3>
+
+<p>Downloads the automobile dataset from Kaggle using <code>kagglehub</code>.</p>
+
+<h3 id="my_projectdatasetpy"><code>my_project/dataset.py</code></h3>
+
+<p>Defines the PyTorch <code>AutomobileDataset</code>, which loads the processed Parquet data and converts it into PyTorch tensors.</p>
+
+<h3 id="my_projecttrainpy"><code>my_project/train.py</code></h3>
+
+<p>Contains the neural network and training functionality:</p>
+
+<ul>
+<li><code>create_model()</code> — creates the neural network.</li>
+<li><code>train_model()</code> — trains the model.</li>
+<li><code>main()</code> — loads the datasets, trains the model, and saves the trained model.</li>
+</ul>
+
+<p></details></p>
+
+<p><details>
+<summary><strong>Jupyter notebooks</strong></summary></p>
+
+<h3 id="data_explorationipynb"><code>data_exploration.ipynb</code></h3>
+
+<p>Performs:</p>
+
+<ul>
+<li>Data loading</li>
+<li>Data preprocessing</li>
+<li>Exploratory data analysis</li>
+<li>Dataset preparation</li>
+<li>Generation of exploratory figures</li>
+</ul>
+
+<h3 id="performance_analysisipynb"><code>performance_analysis.ipynb</code></h3>
+
+<p>Loads the trained model and evaluates its predictions and performance.</p>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="documentation-generation">Documentation Generation</h2>
+
+<p><details>
+<summary><strong>Generate documentation locally</strong></summary></p>
+
+<p>The API documentation is generated using <a href="https://pdoc.dev/">pdoc</a>.</p>
+
+<p>Run the command</p>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>pdoc<span class="w"> </span>-o<span class="w"> </span>docs<span class="w"> </span>my_project<span class="w"> </span>--docformat<span class="w"> </span>numpy
+</code></pre>
+</div>
+
+<p>The generated documentation is stored in <code>docs/</code> and published automatically through GitHub Pages.</p>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="contributing">Contributing</h2>
+
+<p><details>
+<summary><strong>Contribution guidelines</strong></summary></p>
+
+<p>Contributions should follow the project's Git workflow.</p>
+
+<ol>
+<li>Create a feature branch from <code>main</code>:</li>
+</ol>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/my-change
+</code></pre>
+</div>
+
+<ol start="2">
+<li>Make the required changes.</li>
+<li>Test the changes locally.</li>
+<li>Use descriptive commit messages:</li>
+</ol>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add descriptive change"</span>
+</code></pre>
+</div>
+
+<ol start="5">
+<li>Push the feature branch:</li>
+</ol>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/my-change
+</code></pre>
+</div>
+
+<ol start="6">
+<li>Open a pull request to <code>main</code>.</li>
+</ol>
+
+<p>Changes should be focused and documented when appropriate.</p>
+
+<p>Do not commit:</p>
+
+<ul>
+<li>Downloaded datasets</li>
+<li>Processed datasets</li>
+<li>Trained model files</li>
+<li>Python cache files</li>
+<li>Other generated files excluded by <code>.gitignore</code></li>
+</ul>
+
+<p></details></p>
+
+<hr />
+
+<h2 id="license">License</h2>
+
+<p>This project is licensed under the <strong>MIT License</strong>.</p>
+
+<p>See <a href="LICENSE">LICENSE</a> for the complete license text.</p>
+</div>
+
                         <input id="mod-my_project-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
                         <label class="view-source-button" for="mod-my_project-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'dataset'</span><span class="p">,</span><span class="s1">'train'</span><span class="p">,</span><span class="s1">'fileManager'</span><span class="p">]</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="n">readme_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"README.md"</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="k">if</span> <span class="n">readme_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>    <span class="vm">__doc__</span> <span class="o">=</span> <span class="n">readme_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="k">else</span><span class="p">:</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="vm">__doc__</span> <span class="o">=</span> <span class="s2">"Package documentation (README.md not found)."</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'dataset'</span><span class="p">,</span><span class="s1">'train'</span><span class="p">,</span><span class="s1">'fileManager'</span><span class="p">]</span>
 </span></pre></div>
 
 
