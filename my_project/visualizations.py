@@ -1,6 +1,7 @@
 import numpy as np
 import plotly.express as px
-
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 def car_model_count(df):
     car_counts = df["Make"].value_counts().reset_index()
@@ -82,5 +83,84 @@ def pairplots(df):
         dimensions=numeric_columns,
         title="Automobile Dataset: Pairplot"
     )
+
+    return fig
+
+
+def actual_vs_predicted(targets, predictions):
+    """Plot actual prices against predicted prices."""
+
+    fig, ax = plt.subplots(figsize=(6, 6))
+
+    ax.scatter(
+        targets,
+        predictions,
+        alpha=0.6
+    )
+
+    min_value = min(
+        targets.min(),
+        predictions.min()
+    )
+
+    max_value = max(
+        targets.max(),
+        predictions.max()
+    )
+
+    ax.plot(
+        [min_value, max_value],
+        [min_value, max_value],
+        linestyle="--"
+    )
+
+    ax.set_xlabel("Actual Price")
+    ax.set_ylabel("Predicted Price")
+    ax.set_title("Actual vs Predicted")
+
+    return fig
+
+
+def residual_distribution(targets, predictions):
+    """Plot the distribution of prediction errors."""
+
+    residuals = predictions - targets
+
+    fig, ax = plt.subplots(figsize=(6, 4))
+
+    sns.histplot(
+        residuals,
+        kde=True,
+        ax=ax
+    )
+
+    ax.set_xlabel("Prediction Error")
+    ax.set_ylabel("Frequency")
+    ax.set_title("Residual Distribution")
+
+    return fig
+
+
+def residuals_vs_predictions(targets, predictions):
+    """Plot residuals against predicted prices."""
+
+    residuals = predictions - targets
+
+    fig, ax = plt.subplots(figsize=(6, 4))
+
+    ax.scatter(
+        predictions,
+        residuals,
+        alpha=0.6
+    )
+
+    ax.axhline(
+        y=0,
+        linestyle="--"
+    )
+
+    ax.set_xlabel("Predicted Price")
+    ax.set_ylabel("Residual")
+    ax.set_title("Residuals vs Predictions")
 
     return fig
