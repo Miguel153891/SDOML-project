@@ -17,9 +17,16 @@ def evaluate_model():
         dataset.X.shape[1]
     )
 
+    #model.load_state_dict(
+    #    torch.load(
+    #        "../models/automobile_model.pth",
+    #        map_location="cpu"
+    #    )
+    #)
+
     model.load_state_dict(
         torch.load(
-            "../models/automobile_model.pth",
+            PROJECT_ROOT / "models" / "automobile_model.pth",
             map_location="cpu"
         )
     )
