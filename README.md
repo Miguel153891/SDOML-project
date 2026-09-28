@@ -17,6 +17,86 @@
 
 ---
 
+## Run the Demo
+
+<details>
+<summary><strong>Run the application directly with uvx</strong></summary>
+
+The project is published as a Python package on **PyPI**, so the demo can be run without cloning the repository.
+
+Run:
+
+```bash
+uvx --from sdoml-project-main sdoml
+```
+
+This command automatically installs the package and its dependencies in an isolated environment and launches the **Gradio application**.
+
+</details>
+
+<details>
+<summary><strong>PyPI package</strong></summary>
+
+The package is available on PyPI:
+
+**[SDOML Project on PyPI](https://pypi.org/project/sdoml-project-main/)**
+
+</details>
+
+<details>
+<summary><strong>Build the package locally</strong></summary>
+
+To build the package from the source repository, run:
+
+```bash
+uv build
+```
+
+The generated package files are placed in:
+
+```text
+dist/
+```
+
+</details>
+
+<details>
+<summary><strong>Test the local package</strong></summary>
+
+The generated wheel can be tested locally before publishing.
+
+Run:
+
+```bash
+uvx --from dist/sdoml_project_main-0.1.0-py3-none-any.whl sdoml
+```
+
+This installs and runs the locally built package in an isolated environment.
+
+</details>
+
+<details>
+<summary><strong>Publish a new version</strong></summary>
+
+After updating the package version in `pyproject.toml`, rebuild the package:
+
+```bash
+uv build
+```
+
+Then publish the generated package files to PyPI:
+
+```bash
+uv publish
+```
+
+A **PyPI API token** with permission to upload the package is required.
+
+</details>
+
+
+
+
 ## Project Information
 
 <details>
