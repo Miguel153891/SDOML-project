@@ -1297,6 +1297,9 @@ with gr.Blocks() as app:
 #    share=True
 #)
 
-app.launch(
-    css=custom_css
-)
+def main():
+    app.launch(css=custom_css)
+
+
+if __name__ == "__main__":
+    main()
