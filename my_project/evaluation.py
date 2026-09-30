@@ -8,7 +8,19 @@ import matplotlib.pyplot as plt
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-def evaluate_model():
+def evaluate_model() -> tuple[np.ndarray, np.ndarray, dict]:
+    """
+    Executes the evaluation of the model.
+
+    Returns
+    -------
+    targets : np.ndarray
+        True targets from the test dataset
+    predictions : np.ndarray
+        Predicted targets on the test dataset
+    metrics : dict
+        Various metrics (MAE, RMAE, R^2) obtained from the test dataset 
+    """
 
     dataset = AutomobileDataset(
         PROJECT_ROOT / "data" / "processed" / "automobile_test.parquet"
@@ -16,13 +28,6 @@ def evaluate_model():
     model = create_model(
         dataset.X.shape[1]
     )
-
-    #model.load_state_dict(
-    #    torch.load(
-    #        "../models/automobile_model.pth",
-    #        map_location="cpu"
-    #    )
-    #)
 
     model.load_state_dict(
         torch.load(

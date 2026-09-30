@@ -16,8 +16,20 @@ PROCESSED_TRAIN_FILE = PROJECT_ROOT / "data" / "processed" / "automobile_dataset
 PROCESSED_TEST_FILE = PROJECT_ROOT / "data" / "processed" / "automobile_test"
 
 
-def preprocess_dataset(df):
-    """Clean and encode the automobile dataset."""
+def preprocess_dataset(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Cleans and encodes the automobile dataset.
+        
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe with the unprocessed data
+        
+    Returns
+    -------
+    df : pd.DataFrame
+        Dataframe with the preprocessed data
+    """
 
     # Optimize numerical types
     for column in df.columns:
@@ -72,8 +84,17 @@ def preprocess_dataset(df):
     return df
 
 
-def prepare_dataset():
-    """Download, preprocess and save the dataset."""
+def prepare_dataset() -> tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Downloads, preprocesses and saves the dataset.
+        
+    Returns
+    -------
+    train_df : pd.DataFrame
+        Dataframe with the preprocessed train data
+    test_df : pd.DataFrame
+        Dataframe with the preprocessed test data
+    """
 
     raw_csv = PROJECT_ROOT / "data" / "raw" / "automobile_dataset.csv"
 

@@ -10,19 +10,18 @@ from my_project.dataset import AutomobileDataset
 
 
 def create_model(input_size: int) -> nn.Module:
-
-    """Create the neural network used for price prediction.
+    """
+    Create the neural network used for price prediction.
 
     Parameters
     ----------
     input_size : int
-        Number of input features.
+        Number of input features
 
     Returns
     -------
     torch.nn.Module
-        Neural network for predicting automobile selling prices.
-
+        Neural network for predicting automobile selling prices
     """
 
     return nn.Sequential(
@@ -44,23 +43,20 @@ def train_model(
     Parameters
     ----------
     model : torch.nn.Module
-        Neural network to train.
-
+        Neural network to train
     train_loader : torch.utils.data.DataLoader
-        DataLoader containing the training data.
-
+        DataLoader containing the training data
     epochs : int, default=100
-        Number of training epochs.
-
+        Number of training epochs
     learning_rate : float, default=0.001
-        Learning rate used by the Adam optimizer.
+        Learning rate used by the Adam optimizer
 
     Returns
     -------
     torch.nn.Module
-        The trained model.
-
+        The trained model
     """
+    
     loss_fn = nn.MSELoss()
 
     optimizer = torch.optim.Adam(
@@ -107,8 +103,28 @@ def train_model_with_history(
     train_loader: DataLoader,
     epochs: int = 100,
     learning_rate: float = 0.001
-):
-    """Train model and return loss history."""
+) -> tuple[nn.Module, list[float]]:
+    """
+    Train model and return loss history.
+        
+    Parameters
+    ----------
+    model : torch.nn.Module
+        Neural network to train
+    train_loader : torch.utils.data.DataLoader
+        DataLoader for the training data
+    epochs : int, default=100
+        Amount of epochs to train for
+    learning_rate : float, default=0.001
+        Learning rate of the neural network
+        
+    Returns
+    -------
+    df : pd.DataFrame
+        Dataframe with the preprocessed data
+    history : list[float]
+        List with the history of the loss, of `epochs` lenght 
+    """
 
     loss_fn = nn.MSELoss()
 
@@ -151,8 +167,10 @@ def train_model_with_history(
     return model, history
     
 
-def main():
-    """Train the automobile price prediction model and save it to disk."""
+def main() -> None:
+    """
+    Train the automobile price prediction model and save it to disk.
+    """
 
     PROCESSED_TRAIN_FILE = "data/processed/automobile_dataset"
     PROCESSED_TEST_FILE = "data/processed/automobile_test"
