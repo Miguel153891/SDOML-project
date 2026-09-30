@@ -68,7 +68,7 @@ The generated wheel can be tested locally before publishing.
 Run:
 
 ```bash
-uvx --from dist/sdoml_project_main-0.1.0-py3-none-any.whl sdoml
+uvx --from dist/sdoml_project_main-0.1.1-py3-none-any.whl sdoml
 ```
 
 This installs and runs the locally built package in an isolated environment.
