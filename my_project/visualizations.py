@@ -1,9 +1,25 @@
 import numpy as np
+import plotly
+import pandas as pd
 import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-def car_model_count(df):
+def car_model_count(df: pd.DataFrame) -> plotly.graph_objects.Figure:
+    """
+    Makes a plot showing how many cars each car model has.
+        
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe with the data
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Bar plot showing the car amounts per car model
+    """
+    
     car_counts = df["Make"].value_counts().reset_index()
     car_counts.columns = ["Make", "Count"]
 
@@ -25,7 +41,21 @@ def car_model_count(df):
     return fig
 
 
-def correlation_plot(df):
+def correlation_plot(df: pd.DataFrame) -> plotly.graph_objects.Figure:
+    """
+    Creates a plot heatmap showing the correlation of features.
+        
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe with the data
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Plot showing a correlation heatmap
+    """
+    
     corr = df.select_dtypes(include=np.number).corr()
 
     fig = px.imshow(
@@ -38,7 +68,21 @@ def correlation_plot(df):
     return fig
 
 
-def scatterplots(df):
+def scatterplots(df: pd.DataFrame) -> plotly.graph_objects.Figure:
+    """
+    Creates a scatterplot showing selling price and Mileage against each other.
+        
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe with the data
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Scatterplot between selling price and Mileage
+    """
+    
     fig = px.scatter(
         df,
         x="Selling_Price",
@@ -56,7 +100,21 @@ def scatterplots(df):
     return fig
 
 
-def selling_vs_car(df):
+def selling_vs_car(df: pd.DataFrame) -> plotly.graph_objects.Figure:
+    """
+    Creates a boxplot of the car model and the selling price.
+        
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe with the data
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Boxplot of the car model on selling price
+    """
+    
     fig = px.box(
         df,
         x="Make",
@@ -75,7 +133,21 @@ def selling_vs_car(df):
     return fig
 
 
-def pairplots(df):
+def pairplots(df: pd.DataFrame) -> plotly.graph_objects.Figure:
+    """
+    Creates all pairplots of the features.
+        
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe with the data
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Pairplots of the features
+    """
+    
     numeric_columns = df.select_dtypes(include=np.number).columns
 
     fig = px.scatter_matrix(
@@ -87,8 +159,22 @@ def pairplots(df):
     return fig
 
 
-def actual_vs_predicted(targets, predictions):
-    """Plot actual prices against predicted prices."""
+def actual_vs_predicted(targets: np.ndarray, predictions: np.ndarray) -> plotly.graph_objects.Figure:
+    """
+    Plot actual prices against predicted prices.
+        
+    Parameters
+    ----------
+    targets : np.ndarray
+        True targets from the dataset
+    predictions : np.ndarray
+        Predicted targets on the dataset
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Plot showing the regression and the scattered data
+    """
 
     fig, ax = plt.subplots(figsize=(6, 6))
 
@@ -121,8 +207,22 @@ def actual_vs_predicted(targets, predictions):
     return fig
 
 
-def residual_distribution(targets, predictions):
-    """Plot the distribution of prediction errors."""
+def residual_distribution(targets: np.ndarray, predictions: np.ndarray) -> plotly.graph_objects.Figure:
+    """
+    Plot the distribution of prediction errors.
+        
+    Parameters
+    ----------
+    targets : np.ndarray
+        True targets from the dataset
+    predictions : np.ndarray
+        Predicted targets on the dataset
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Plot showing the prediction errors
+    """
 
     residuals = predictions - targets
 
@@ -141,8 +241,22 @@ def residual_distribution(targets, predictions):
     return fig
 
 
-def residuals_vs_predictions(targets, predictions):
-    """Plot residuals against predicted prices."""
+def residuals_vs_predictions(targets: np.ndarray, predictions: np.ndarray) -> plotly.graph_objects.Figure:
+    """
+    Plot residuals against predicted prices.
+        
+    Parameters
+    ----------
+    targets : np.ndarray
+        True targets from the dataset
+    predictions : np.ndarray
+        Predicted targets on the dataset
+        
+    Returns
+    -------
+    fig : plotly.graph_objects.Figure
+        Plot showing the residuals and the scattered data
+    """
 
     residuals = predictions - targets
 

@@ -14,14 +14,16 @@ RAW_DATA_DIR = PROJECT_ROOT / "data" / "raw"
 RAW_DATA_FILE = RAW_DATA_DIR / DATASET_FILE
 
 
-def download_dataset():
-    """Download the automobile dataset to the project's raw data directory.
+def download_dataset() -> Path:
+    """
+    Download the automobile dataset to the project's raw data directory.
 
     Returns
     -------
     pathlib.Path
         Path to the downloaded CSV file.
     """
+    
     RAW_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     df = kagglehub.dataset_load(

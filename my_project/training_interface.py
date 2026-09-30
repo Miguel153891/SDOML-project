@@ -27,14 +27,28 @@ MODEL_PATH = (
 )
 
 
-def train_from_interface(
-    epochs=50,
-    learning_rate=0.001,
-    batch_size=32
-):
+def train_from_interface(epochs : int = 50, learning_rate : float = 0.001,
+                         batch_size : int = 32) -> tuple[list[float],float,str]:
     """
-    Train a model using hyperparameters provided
-    by the Gradio interface.
+    Train a model using hyperparameters provided by the Gradio interface.
+
+    Parameters
+    ----------
+    epochs : int, default=50
+        Number of training epochs
+    learning_rate : float, default=0.001
+        Learning rate used for training
+    batch_size : int, default=32
+        Batch size to be used in training
+
+    Returns
+    -------
+    history : list[float]
+        List with the history of the loss, of `epochs` lenght
+    final_loss : float
+        Last loss of the history
+    model_path : str
+        Path were the model was saved
     """
 
     epochs = int(epochs)

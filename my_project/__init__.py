@@ -7,4 +7,4 @@ if readme_path.exists():
 else:
     __doc__ = "Package documentation (README.md not found)."
     
-__all__ = ['dataset','train','fileManager']
+__all__ = ['dataset','download_data','evaluation','fileManager','prediction','preprocessing','train','training_interface','visualizations']

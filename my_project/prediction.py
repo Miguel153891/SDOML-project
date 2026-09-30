@@ -12,25 +12,57 @@ MODEL_PATH = PROJECT_ROOT / "models" / "automobile_model.pth"
 DATA_PATH = PROJECT_ROOT / "data" / "processed" / "automobile_dataset.parquet"
 
 
-def predict_price(
-    year,
-    engine_size,
-    mileage,
-    horsepower,
-    torque,
-    owners,
-    accident_history,
-    service_history,
-    fuel_efficiency,
-    make,
-    model_name,
-    fuel_type,
-    transmission,
-    color,
-    body_type,
-    drivetrain,
-    location,
-):
+def predict_price(year: int, engine_size: float, mileage: int, horsepower: float,
+    torque: float, owners: int, accident_history: float, service_history: str,
+    fuel_efficiency: float, make: str, model_name: str, fuel_type: str,
+    transmission: str, color: str, body_type: str, drivetrain: str,
+    location: str) -> float:
+    """
+    Train model and return loss history.
+        
+    Parameters
+    ----------
+    year: int
+        Data necessary for the prediction, representing one feature with its same name.
+    engine_size: float
+        Data necessary for the prediction, representing one feature with its same name.
+    mileage: int
+        Data necessary for the prediction, representing one feature with its same name.
+    horsepower: float
+        Data necessary for the prediction, representing one feature with its same name.
+    torque: float
+        Data necessary for the prediction, representing one feature with its same name.
+    owners: int
+        Data necessary for the prediction, representing one feature with its same name.
+    accident_history: float
+        Data necessary for the prediction, representing one feature with its same name.
+    service_history: str
+        Data necessary for the prediction, representing one feature with its same name.
+    fuel_efficiency: float
+        Data necessary for the prediction, representing one feature with its same name.
+    make: str
+        Data necessary for the prediction, representing one feature with its same name.
+    model_name: str
+        Data necessary for the prediction, representing one feature with its same name.
+    fuel_type: str
+        Data necessary for the prediction, representing one feature with its same name.
+    transmission: str
+        Data necessary for the prediction, representing one feature with its same name.
+    color: str
+        Data necessary for the prediction, representing one feature with its same name.
+    body_type: str
+        Data necessary for the prediction, representing one feature with its same name.
+    drivetrain: str
+        Data necessary for the prediction, representing one feature with its same name.
+    location: str
+        Data necessary for the prediction, representing one feature with its same name.
+        
+    Returns
+    -------
+    prediction : float
+        the selling price predicted
+    """
+    
     # Load processed training data to obtain
     # exactly the same feature columns.
     df = pd.read_parquet(DATA_PATH)
