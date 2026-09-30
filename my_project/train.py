@@ -61,7 +61,6 @@ def train_model(
         The trained model.
 
     """
-
     loss_fn = nn.MSELoss()
 
     optimizer = torch.optim.Adam(
@@ -71,18 +70,86 @@ def train_model(
 
     for epoch in range(epochs):
 
+        epoch_loss = 0.0
+        samples = 0
+
         for X, y in train_loader:
+
             prediction = model(X).squeeze()
-            loss = loss_fn(prediction, y)
+
+            loss = loss_fn(
+                prediction,
+                y
+            )
 
             optimizer.zero_grad()
+
             loss.backward()
+
             optimizer.step()
 
-        print(f"Epoch {epoch + 1}, Loss: {loss.item():.4f}")
+            batch_size = X.size(0)
+
+            epoch_loss += loss.item() * batch_size
+            samples += batch_size
+
+        average_loss = epoch_loss / samples
+
+        print(
+            f"Epoch {epoch + 1}/{epochs} "
+            f"- Loss: {average_loss:.4f}"
+        )
 
     return model
 
+def train_model_with_history(
+    model: nn.Module,
+    train_loader: DataLoader,
+    epochs: int = 100,
+    learning_rate: float = 0.001
+):
+    """Train model and return loss history."""
+
+    loss_fn = nn.MSELoss()
+
+    optimizer = torch.optim.Adam(
+        model.parameters(),
+        lr=learning_rate
+    )
+
+    history = []
+
+    for epoch in range(epochs):
+
+        epoch_loss = 0.0
+        samples = 0
+
+        for X, y in train_loader:
+
+            prediction = model(X).squeeze()
+
+            loss = loss_fn(
+                prediction,
+                y
+            )
+
+            optimizer.zero_grad()
+
+            loss.backward()
+
+            optimizer.step()
+
+            batch_size = X.size(0)
+
+            epoch_loss += loss.item() * batch_size
+            samples += batch_size
+
+        average_loss = epoch_loss / samples
+
+        history.append(average_loss)
+
+    return model, history
+    
 
 def main():
     """Train the automobile price prediction model and save it to disk."""
